@@ -83,7 +83,7 @@ alphabet_trd.display()
 ```
 
 
-![png](MD\\output_10_0.png)
+![png](MD/output_.png)
 
 
     Number of different characters : 26
@@ -147,7 +147,7 @@ _ =evaluate_classifier(keras_model_trd ,x_test_trd, y_test_trd,argmax=True,title
     
 
 
-![png](MD\\output_14_1.png)
+![png](output_14_1.png)
 
 
 As you see, using a traditional technique to train the classifier while having a small amunt of examples per class quickly creates overfitting, the classifier quickly learn the training examples and fail to generalize it to different examples
@@ -205,7 +205,7 @@ plt.show()
     
 
 
-![png](MD\\output_17_1.png)
+![png](output_17_1.png)
 
 
     Number of different characters : 26
@@ -216,27 +216,27 @@ plt.show()
 
 
 
-![png](MD\\output_17_4.png)
+![png](output_17_4.png)
 
 
 
-![png](MD\\output_17_5.png)
+![png](output_17_5.png)
 
 
 
-![png](MD\\output_17_6.png)
+![png](output_17_6.png)
 
 
 
-![png](MD\\output_17_7.png)
+![png](output_17_7.png)
 
 
 
-![png](MD\\output_17_8.png)
+![png](output_17_8.png)
 
 
 
-![png](MD\\output_17_9.png)
+![png](output_17_9.png)
 
 
     
@@ -245,7 +245,7 @@ plt.show()
     
 
 
-![png](MD\\output_17_11.png)
+![png](output_17_11.png)
 
 
 As you see, using unsupervised clustering with no preprocessing on the data retruns not very good results,
@@ -520,7 +520,7 @@ plt.show()
 ```
 
 
-![png](MD\\output_30_0.png)
+![png](output_30_0.png)
 
 
 some little augmentation functions to enlarge the diversity of the inputs - to increase the chances to generalize the training
@@ -663,7 +663,7 @@ plt.show()
 ```
 
 
-![png](MD\\output_33_0.png)
+![png](output_33_0.png)
 
 
 
@@ -743,23 +743,23 @@ for index in range (5):
     
 
 
-![png](MD\\output_35_1.png)
+![png](output_35_1.png)
 
 
 
-![png](MD\\output_35_2.png)
+![png](output_35_2.png)
 
 
 
-![png](MD\\output_35_3.png)
+![png](output_35_3.png)
 
 
 
-![png](MD\\output_35_4.png)
+![png](output_35_4.png)
 
 
 
-![png](MD\\output_35_5.png)
+![png](output_35_5.png)
 
 
 creatting a batch generator to generat a set of 2 characters, half are the same class and half different (balance set)
@@ -836,35 +836,35 @@ for index in range (y.shape[0]):
 ```
 
 
-![png](MD\\output_39_0.png)
+![png](output_39_0.png)
 
 
 
-![png](MD\\output_39_1.png)
+![png](output_39_1.png)
 
 
 
-![png](MD\\output_39_2.png)
+![png](output_39_2.png)
 
 
 
-![png](MD\\output_39_3.png)
+![png](output_39_3.png)
 
 
 
-![png](MD\\output_39_4.png)
+![png](output_39_4.png)
 
 
 
-![png](MD\\output_39_5.png)
+![png](output_39_5.png)
 
 
 
-![png](MD\\output_39_6.png)
+![png](output_39_6.png)
 
 
 
-![png](MD\\output_39_7.png)
+![png](output_39_7.png)
 
 
 ### Architecture
@@ -1452,7 +1452,7 @@ evalute_alphabet.display()
     
 
 
-![png](MD\\output_65_1.png)
+![png](output_65_1.png)
 
 
     Number of different characters : 45
@@ -1468,7 +1468,7 @@ T,Y = evaluate_language(siamese_model,alphabet=evalute_alphabet,size  = 2000,loa
     
 
 
-![png](MD\\output_66_1.png)
+![png](output_66_1.png)
 
 
 ## One-Shot Classfication
@@ -1552,7 +1552,7 @@ _ = evaluate_classifier(siamese_kneighbors,X_test[0:500],Y_test[0:500])
     
 
 
-![png](MD\\output_74_1.png)
+![png](output_74_1.png)
 
 
 Note that because this classifier dont have the position of the image in space, its need to calculate 
@@ -1631,7 +1631,7 @@ _ = evaluate_classifier(classifier_knn,test_loc_vector,Y_test,title=evalute_alph
     
 
 
-![png](MD\\output_83_1.png)
+![png](output_83_1.png)
 
 
 ### Using PCA To Decrease Location Vector's Dimensions
@@ -1683,7 +1683,7 @@ _ = evaluate_classifier(classifier_knn,test_pca,Y_test[:],title=evalute_alphabet
     
 
 
-![png](MD\\output_86_1.png)
+![png](output_86_1.png)
 
 
 Note that with much smaller vector we can get almost the same results as the huge first vector
@@ -1740,7 +1740,7 @@ print('ARI = ' + format(ARI,".3f"))
     
 
 
-![png](MD\\output_90_1.png)
+![png](output_90_1.png)
 
 
 
@@ -1769,7 +1769,7 @@ plt.show()
     
 
 
-![png](MD\\output_91_1.png)
+![png](output_91_1.png)
 
 
     Number of different characters : 45
@@ -1780,39 +1780,39 @@ plt.show()
 
 
 
-![png](MD\\output_91_4.png)
+![png](output_91_4.png)
 
 
 
-![png](MD\\output_91_5.png)
+![png](output_91_5.png)
 
 
 
-![png](MD\\output_91_6.png)
+![png](output_91_6.png)
 
 
 
-![png](MD\\output_91_7.png)
+![png](output_91_7.png)
 
 
 
-![png](MD\\output_91_8.png)
+![png](output_91_8.png)
 
 
 
-![png](MD\\output_91_9.png)
+![png](output_91_9.png)
 
 
 
-![png](MD\\output_91_10.png)
+![png](output_91_10.png)
 
 
 
-![png](MD\\output_91_11.png)
+![png](output_91_11.png)
 
 
 
-![png](MD\\output_91_12.png)
+![png](output_91_12.png)
 
 
 # Conclusions
@@ -1850,7 +1850,7 @@ for layer in inner_model.layers:
     
 
 
-![png](MD\\output_95_1.png)
+![png](output_95_1.png)
 
 
     conv_pw_2_relu
@@ -1858,7 +1858,7 @@ for layer in inner_model.layers:
     
 
 
-![png](MD\\output_95_3.png)
+![png](output_95_3.png)
 
 
     conv_pw_3_relu
@@ -1866,7 +1866,7 @@ for layer in inner_model.layers:
     
 
 
-![png](MD\\output_95_5.png)
+![png](output_95_5.png)
 
 
     conv_pw_4_relu
@@ -1874,7 +1874,7 @@ for layer in inner_model.layers:
     
 
 
-![png](MD\\output_95_7.png)
+![png](output_95_7.png)
 
 
     conv_pw_5_relu
@@ -1882,7 +1882,7 @@ for layer in inner_model.layers:
     
 
 
-![png](MD\\output_95_9.png)
+![png](output_95_9.png)
 
 
     conv_pw_6_relu
@@ -1890,7 +1890,7 @@ for layer in inner_model.layers:
     
 
 
-![png](MD\\output_95_11.png)
+![png](output_95_11.png)
 
 
     conv_pw_7_relu
@@ -1898,7 +1898,7 @@ for layer in inner_model.layers:
     
 
 
-![png](MD\\output_95_13.png)
+![png](output_95_13.png)
 
 
     conv_pw_8_relu
@@ -1906,7 +1906,7 @@ for layer in inner_model.layers:
     
 
 
-![png](MD\\output_95_15.png)
+![png](output_95_15.png)
 
 
     conv_pw_9_relu
@@ -1914,7 +1914,7 @@ for layer in inner_model.layers:
     
 
 
-![png](MD\\output_95_17.png)
+![png](output_95_17.png)
 
 
     conv_pw_10_relu
@@ -1922,7 +1922,7 @@ for layer in inner_model.layers:
     
 
 
-![png](MD\\output_95_19.png)
+![png](output_95_19.png)
 
 
     conv_pw_11_relu
@@ -1930,7 +1930,7 @@ for layer in inner_model.layers:
     
 
 
-![png](MD\\output_95_21.png)
+![png](output_95_21.png)
 
 
     conv_pw_12_relu
@@ -1938,7 +1938,7 @@ for layer in inner_model.layers:
     
 
 
-![png](MD\\output_95_23.png)
+![png](output_95_23.png)
 
 
     conv_pw_13_relu
@@ -1946,7 +1946,7 @@ for layer in inner_model.layers:
     
 
 
-![png](MD\\output_95_25.png)
+![png](output_95_25.png)
 
 
 The output shape of the convolutional layer will be [batch_size, number of filters, width, height]
@@ -1967,11 +1967,11 @@ print('features_maps to features vector outputs weights [num_of_conv_features_ma
 features_maps_w = K.eval(inner_model.get_layer('conv_preds').weights[0])[0,0]
 print(features_maps_w.shape)
 
-print('features vector to siamese predicted output weights [features_vector_size ,siamese_MD\\output_size]')
+print('features vector to siamese predicted output weights [features_vector_size ,siamese_output_size]')
 siamese_dense_w = K.eval(siamese_model.layers[-1].weights[0])
 print(siamese_dense_w.shape)
 
-print('\nFeatures_maps rerlative weights [num_of_conv_features_maps ,siamese_MD\\output_size]')
+print('\nFeatures_maps rerlative weights [num_of_conv_features_maps ,siamese_output_size]')
 for feature_w in range(features_maps_w.shape[-1]):
     features_maps_w[feature_w] = features_maps_w[feature_w] * siamese_dense_w.flatten()
 print(features_maps_w.shape)
@@ -1995,10 +1995,10 @@ print(conv_features_map.shape)
     (3, 1, 1, 1024)
     features_maps to features vector outputs weights [num_of_conv_features_maps ,features_vector_size]
     (1024, 1000)
-    features vector to siamese predicted output weights [features_vector_size ,siamese_MD\\output_size]
+    features vector to siamese predicted output weights [features_vector_size ,siamese_output_size]
     (1000, 1)
     
-    Features_maps rerlative weights [num_of_conv_features_maps ,siamese_MD\\output_size]
+    Features_maps rerlative weights [num_of_conv_features_maps ,siamese_output_size]
     (1024, 1000)
     
     Relative influence of the features maps [batch_size ,f_hight ,f_widh, num_of_conv_feature]
@@ -2067,112 +2067,112 @@ for ii in range(y.shape[0]):
 
 
 
-![png](MD\\output_99_2.png)
+![png](output_99_2.png)
 
 
     same | predicted : same
     
 
 
-![png](MD\\output_99_4.png)
+![png](output_99_4.png)
 
 
     same | predicted : same
     
 
 
-![png](MD\\output_99_6.png)
+![png](output_99_6.png)
 
 
     same | predicted : same
     
 
 
-![png](MD\\output_99_8.png)
+![png](output_99_8.png)
 
 
     same | predicted : same
     
 
 
-![png](MD\\output_99_10.png)
+![png](output_99_10.png)
 
 
     same | predicted : same
     
 
 
-![png](MD\\output_99_12.png)
+![png](output_99_12.png)
 
 
     same | predicted : same
     
 
 
-![png](MD\\output_99_14.png)
+![png](output_99_14.png)
 
 
     same | predicted : same
     
 
 
-![png](MD\\output_99_16.png)
+![png](output_99_16.png)
 
 
     different | predicted : different
     
 
 
-![png](MD\\output_99_18.png)
+![png](output_99_18.png)
 
 
     different | predicted : different
     
 
 
-![png](MD\\output_99_20.png)
+![png](output_99_20.png)
 
 
     different | predicted : different
     
 
 
-![png](MD\\output_99_22.png)
+![png](output_99_22.png)
 
 
     different | predicted : different
     
 
 
-![png](MD\\output_99_24.png)
+![png](output_99_24.png)
 
 
     different | predicted : same
     
 
 
-![png](MD\\output_99_26.png)
+![png](output_99_26.png)
 
 
     different | predicted : different
     
 
 
-![png](MD\\output_99_28.png)
+![png](output_99_28.png)
 
 
     different | predicted : different
     
 
 
-![png](MD\\output_99_30.png)
+![png](output_99_30.png)
 
 
     different | predicted : different
     
 
 
-![png](MD\\output_99_32.png)
+![png](output_99_32.png)
 
 
 
@@ -2408,7 +2408,7 @@ _ = evaluate_classifier(siamese_model,X_test_sig_img,Y_test_sig,
     
 
 
-![png](MD\\output_107_1.png)
+![png](output_107_1.png)
 
 
 
@@ -2426,7 +2426,7 @@ display_confusion_matrix(T,Y,SignatureDataset.labels,figsize = [8,8],title ="th"
     
 
 
-![png](MD\\output_108_1.png)
+![png](output_108_1.png)
 
 
 
@@ -2495,7 +2495,7 @@ confusion_matrix(y_pred=T,y_true=Y_test_sig)
     
 
 
-![png](MD\\output_112_1.png)
+![png](output_112_1.png)
 
 
 
@@ -2551,56 +2551,56 @@ for index in range(batch_size):
     
 
 
-![png](MD\\output_117_1.png)
+![png](output_117_1.png)
 
 
     FORGEN
     
 
 
-![png](MD\\output_117_3.png)
+![png](output_117_3.png)
 
 
     FORGEN
     
 
 
-![png](MD\\output_117_5.png)
+![png](output_117_5.png)
 
 
     FORGEN
     
 
 
-![png](MD\\output_117_7.png)
+![png](output_117_7.png)
 
 
     REAL
     
 
 
-![png](MD\\output_117_9.png)
+![png](output_117_9.png)
 
 
     REAL
     
 
 
-![png](MD\\output_117_11.png)
+![png](output_117_11.png)
 
 
     REAL
     
 
 
-![png](MD\\output_117_13.png)
+![png](output_117_13.png)
 
 
     REAL
     
 
 
-![png](MD\\output_117_15.png)
+![png](output_117_15.png)
 
 
 
