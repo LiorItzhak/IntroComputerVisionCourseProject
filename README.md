@@ -1,4 +1,4 @@
-# Combine Supervised Learning Techniques With UnSupervised Learning
+# Combine Supervised Learning Techniques With Unsupervised Learning
 
 ### Class work for Introdution to Computer Vision, 
 #### Lior Itzhak, guided by
