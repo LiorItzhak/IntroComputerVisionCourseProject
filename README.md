@@ -3,7 +3,6 @@
 
 ### Class work for Introdution to Computer Vision, 
 #### Lior Itzhak, guided by Or Katz and DR. Eyal Kats
-
 ## Introduction
 
 At this demonstration, I will exhibit how we can make use of the advantages of supervised-learning techniques like deep CNNs and apply some unsupervised-learning methods on them.
@@ -1558,10 +1557,10 @@ Classify a lot of data this way can take much time!
 
 #### Extracting Image Location In Space From The Features (Features Vector)
 
-As I have shown, the siamese newtwork successfully handle datasets that its nerver seen before, therefore we can assume that the network has been learned featuers that can sperate the data into
+As I have shown, the Siamese-Network successfully handle datasets that it has never seen before. Therefore we can assume that the network has been learned features that can sperate the data.
 
-because the 2 siamise inner models (same model but uses twice) have a L1 distance layer after thair outputs
-the network is forced to give evrey one of the features that clustering the classes a neuron at the output of the inner model, using this outputs's vector we can locate the input's image at the features space map
+Because the two siamese inner models (same model but uses twice) have an L1 distance layer after thair outputs, the internal model is forced to generate output vector of the features that clustering the classes.
+By using these outputs' vector, we can locate the input's image at the features space map.
 
 
 ```python
@@ -1817,6 +1816,8 @@ This examination clearly shows that Neural-Networks can be used to handle missio
 I presented few ways to exploit the supervised learning model and generalizing it to handle other tasks (but still with features-similarity) doing so we can enlarge the variance of the problems that can be resolved by neural networks. 
 
 We could improve this technique using ensembling. I didn't demonstrate that because of a lack of memory.
+
+# Investigate the network
 
 
 ```python
