@@ -1,46 +1,41 @@
 # Combine Supervised Learning Techniques With Unsupervised Learning 
 
 
-
 ### Class work for Introdution to Computer Vision, 
 #### Lior Itzhak, guided by Or Katz and DR. Eyal Kats
 
 ## Introduction
 
-At this demonstration I will exhibit how we can make use of the advantages of te supervised learning techniques 
-like deep CNNs to handle missions that in traditional ways cant be resolved by them.
+At this demonstration, I will exhibit how we can make use of the advantages of supervised-learning techniques like deep CNNs and apply some unsupervised-learning methods on them.
 
-Deep neural networks are often used for classifications tasks like discriminate betweens dogs and a cats,
-object detection and recognition and Big-Data analysis and so on...
-all of thows tasks requires a lot of labeled data (commonly tens of thousands examples or more for each class) 
-and long time for trainning, this coluld be very expensive (acquiring the labeled data and the computation resources),      Additionally if we have built a classifier between some categories, for example: 'dogs and cat', and later on we'll want to generalizing it to also classifiy between other categories ,like 'humams and monkeys' ,we will have to rebuild the classifier, that beacause after the classifier network as been built, if we want to add a new classes to it its requires to train the classifier again using the old classes data's in addition to the new classes data (lots of it).
+Deep neural networks are often used for classifications tasks like discriminate between dogs and cats,
+Object detection and recognition and Big-Data analysis and so on.
+All of those tasks require a lot of labeled data (commonly tens of thousands of examples or more for each class) and long-time for training, and this could be expensive (acquiring the labeled data and computation resources).
+Additionally, if we have built a classifier between some categories, for example: 'dogs and cat' and later on, we'll want to generalize it to also classify between other categories, like 'humans and monkeys' we will have to rebuild the classifier.
+That because after the classifier network has been built, if we want to add a new class to it, it requires to train the classifier again using the old classes' data in addition to the new class's data (lots of it).
 
 At this demonstration I'll exhibitting a way to use a deep CNN classifier to build a machine 
 that can be used to classifiy different classes from the ones that were studied (trained).
 
-The main techniqes is to create a method that will tell us if one object is 'similar' the the other,
-exacly like humans that are able to tell if a specific object is "the same" as the other even if they are seeing them
-for the first time.       
-so such like humans we want to evaluate the "distance" between 2 objects and later on use it for clustering them
-into the differents classes.
+The main techniques are to create a method that will tell us if one object is 'similar' the other,
+exactly like humans that can tell if a specific object is "the same" as the other even if they are seeing them for the first time.       
+So such as humans, we want to evaluate the "distance" between 2 objects and later on use it for clustering them into the different classes.
 
-this techniqes called "One-Shot learnning"
+these techniques called "One-Shot learning."
 
-for creating the distance-evaluaton function I'll make use of the deep CNN's amazing abilities to effectively learn features from a set of images.        
-I'll use the CNN as a features extractor that takes 2 images and return their "distance" and their location's (feautures) vector
+for creating the distance-evaluation function, I'll make use of the deep CNN's amazing abilities to effectively learn features from a set of images.        
+I'll use the CNN as a features extractor that takes two images and return their "distance" and their location's (features) vector.
 
-to do so I will use the Siamese-Network technique 
+To do so, I will use the Siamese-Network technique 
 
 
 ### Siamese-Network
 
-siamese-networks are a neural networks that using the same network's model (same weights) for 
-multiple inputs (commonly 2 - twins)
-this mean that the output is determine by the features that been taken from multiple differents inputs 
-with the same features extractor methods (same network's weights).
+Siamese-networks are neural networks that use the same network's model (same weights) for multiple inputs (commonly 2 - twins).
+That means that the output is determined by the features that been taken from various inputs with the same features extractor methods (same network's weights).
 
-by training the siamese-network the correct features that can evaluate the diffrents between the objects we can assume that 
-the features that been learned will be valid also for differents objects that are sharing the same main properties
+By training the siamese-network to evaluate the difference between objects, we will get some features that separate one object from the other.
+We can assume that the same features can also be valid for different kinds of objects that are sharing the same main properties.
 
 
 
@@ -49,32 +44,30 @@ the features that been learned will be valid also for differents objects that ar
 
 
 
-One more big advantage of the siamese network is that its uses pair (or more) of images as inputs, doing so we increasing the total amount of data from the number of images to the number different pairs that can be selected (for balance data the total amount is the minimum between number of 'false' (different) pairs and the number of 'true' (same) pairs) ,this number is much bigger then the original one.
+One more significant advantage of the siamese network is that it uses pair (or more) of images as inputs. In doing so, we increase the total amount of data from the number of images to the number of different pairs that can be selected. That is very significant because, for balance data, the total amount is the minimum between the number of 'false' (different) pairs and the number of 'true' (same) pairs, this number is much bigger than the original one.
 
 
 
 ### The Experiment
 
-My experiment is to use an alphabets dataset (Omniglot) that containes 50 different handwrriting alphabets 
-with 20 examples of each character (class) and demonstrate an efficient learning and generalization with small amount of data.
+My experiment is to use an alphabets dataset (Omniglot) that contains 50 different handwriting alphabets with 20 examples of each character (class) and demonstrate efficient learning and generalization with a small amount of data.
 
-the number of characters in each alphabet is between 20 to 50 
+The number of characters in each alphabet is between 20 to 50. 
 
-because of the little amount of examples of each character (class), a regular CNN that will try to classify an alphabet's characters will quickly overfit and will unable to classify new examples, additionally if we will need to classify characters of an alphabet that never has been seen by the model we will usually faill (different alphabet then the one we trained on)
+Because of the little number of examples of each character (class), a regular CNN that will try to classify an alphabet's characters will quickly overfit and will unable to classify new (unlearned) examples, additionally if we will need to classify characters of an alphabet that never has been seen by the model we will usually fail (different alphabet then the one we trained on)
 
-my goal is to build a 'machine' that will able evaluate the distance between 2 different characther's images and using this
-evaluation to classify an unseen alpabets, I will do so by trying to teach a siamese network the features that separates each different character from the other
+My goal is to build a 'machine' that will able to evaluate the distance between 2 different character's images and to use this evaluation to classify unseen alphabets, I will do so by trying to teach a siamese network the features that separate each different character from the other.
+
 
 ![alphabets.png](images/alphabets.png)
 
 ### The Traditional Way
 
-First lets examinee the traditional training of CNN classifier by creating a model to classify the characthers of a specific alphabet.
+First, lets examinee the traditional training of the CNN classifier by creating a model to classify the characters of a specific alphabet.
 
-The model have a characther's image as an input and an outputs mutching the number of different characters,  
-each neuron at the output representing a different characther from the alphabet.
+The model has a character's image as an input and an output matching the number of different characters,  each neuron at the output representing a different character from the alphabet.
 
-Each character contains 20 different handwriting examples that divided to train set and test (evaluation) set.
+Each character contains 20 different handwriting examples that divided into the train set and the test (evaluation) set.
 
 
 ```python
@@ -150,9 +143,9 @@ _ =evaluate_classifier(keras_model_trd ,x_test_trd, y_test_trd,argmax=True,title
 ![png](MD/output_14_1.png)
 
 
-As you see, using a traditional technique to train the classifier while having a small amunt of examples per class quickly creates overfitting, the classifier quickly learn the training examples and fail to generalize it to different examples
+As you see, using a traditional technique to train the classifier while having a small number of examples per class creates overfitting, the classifier quickly learn the training examples and fail to generalize it to different cases.
 
-to overcome this problem we must use different technique or add more (much more) examples.
+To overcome this problem, we must use a different technique or add more (much more) examples.
 
 ### Unsupervise Clustering 
 
@@ -248,10 +241,9 @@ plt.show()
 ![png](MD/output_17_11.png)
 
 
-As you see, using unsupervised clustering with no preprocessing on the data retruns not very good results,
-also the clustering high dimensional data effecting the time and the complexity of the algorithm.
+As you see, using unsupervised clustering with no preprocessing on the data returns not very good results, also the clustering high dimensional data affecting the time and the complexity of the algorithm.
 
-later on I'll demontrate how the 'distance techniqe' helping also as preprocrssing for clustering tasks.
+Later on, I'll demonstrate how the 'distance technique' also helping as preprocessing for clustering tasks.
 
 # Now Improve It By Distance Method
 
@@ -875,9 +867,8 @@ for index in range (y.shape[0]):
 
 <img src="images/siamese_model_predict.png" alt="Drawing" style="width: 100%"  align="middle"/>
 
-creating a CNN using keras's applications models
-I choosed the 'Mobilenet' model because its very lite and its able to run on by leptop
-for this experiment its good enough but for a real task you may use more complex network
+Creating a CNN using Keras's applications models
+I chose the 'Mobilenet' model because of its very lite and its ability to run on my laptop, for this experiment its good enough but for a real task you may use a more complex network.
 
 
 ```python
@@ -1473,8 +1464,7 @@ T,Y = evaluate_language(siamese_model,alphabet=evalute_alphabet,size  = 2000,loa
 
 ## One-Shot Classfication
 
-After I built the distance machine (siamese network) I can evaluate the classifications of unseen alphabets with one-shot technique.
-
+After I built the distance machine (siamese network), I can evaluate the classifications of unseen alphabets with the one-shot technique.
 
 split unseening alphabets's data to train and test
 
@@ -1491,16 +1481,14 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.7, random_
 
 ### K Nearest Neighbors Classiffication
 
-This technique uses relatively small amount of data as "training date"
-the training data acts as an anchor throught it its classifing the new data
+This technique uses a relatively small amount of data as "training data."
+The training data acts as an anchor through it classifying the new data.
 
-the classification done by examining the distances between the new data and each of the labeled traind data
-then the classifcator choose the N (one or more) nearst neighbors of the new data 
-and match its label to them (majority determining)
+The classification is done by examining the distances between the new data and each of the labeled trained data. Then the classifcator choose the N (one or more), nearest neighbors of the new data, 
+and match its label to them (majority determining).
 
 
-because the output of the siamese network is one neuron that represents the 'distance' between the inputs
-and not the 'location' of the image at the space, I need to build custom made classifier
+Because the output of the Siamese-Network is one neuron that represents the 'distance' between the inputs and not the 'location' of the image at the space, I need to build a custom made classifier.
 
 ![KNN.png](images/KNN.png)
 
@@ -1555,10 +1543,9 @@ _ = evaluate_classifier(siamese_kneighbors,X_test[0:500],Y_test[0:500])
 ![png](MD/output_74_1.png)
 
 
-Note that because this classifier dont have the position of the image in space, its need to calculate 
-the distances of each new unlabeled data with any of the labeled trained data inefficiently
+Note that because this classifier doesn't have the position of the image in space, it needs to calculate the distances of each new unlabeled data with any of the labeled trained data inefficiently.
 
-classify alot of data this way can take much time
+Classify a lot of data this way can take much time!
 
 #### Extracting Image Location In Space From The Features (Features Vector)
 
@@ -1588,9 +1575,9 @@ siamese_model.layers
 inner_model = siamese_model.layers[2] #take the inner model from siamese network
 ```
 
-calculate the location vectors of the data's images using the inner model of the siamese network
+Calculate the location vectors of the data's images using the inner model of the siamese network.
 
-each vector contains 1000 dimensions that determine the location of the image in the features space (features vector)
+Each vector contains 1000 dimensions that determine the location of the image in the features space (features vector).
 
 
 ```python
@@ -1613,7 +1600,7 @@ train_loc_vector.shape , test_loc_vector.shape
 
 
 
-now I can evaluate the model using a simple k nearest neighbors classifier
+Now I can evaluate the model using a simple k nearest neighbor classifier.
 
 
 ```python
@@ -1636,17 +1623,16 @@ _ = evaluate_classifier(classifier_knn,test_loc_vector,Y_test,title=evalute_alph
 
 ### Using PCA To Decrease Location Vector's Dimensions
 
-Principal component analysis (PCA) is a statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables (entities each of which takes on various numerical values) into a set of values of linearly uncorrelated variables called principal components
+Principal component analysis (PCA) is a statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables (entities each of which takes on various numerical values) into a set of values of linearly uncorrelated variables called principal components.
 
-This transformation is defined in such a way that the first principal component has the largest possible variance (that is, accounts for as much of the variability in the data as possible), and each succeeding component in turn has the highest variance possible under the constraint that it is orthogonal to the preceding components
+This transformation is defined in such a way that the first principal component has the largest possible variance (that is, accounts for as much of the variability in the data as possible), and each succeeding component, in turn, has the highest variance possible under the constraint that it is orthogonal to the preceding components
 
 The resulting vectors (each being a linear combination of the variables and containing n observations) are an uncorrelated orthogonal basis set.
 
 Note that PCA is sensitive to the relative scaling of the original variables.
 
-here i used PCA to reduce the dimenesions of the features vector (1000 dimenesions) into a small vector (9 dimenetions)
-that contains 99% of the data's variance.
-the small vector can later be used as an input to other algorithms that benefits from the reduction. 
+Here I used PCA to reduce the dimensions of the features vector (1000 dimensions) into a small vector (9 dimensions) that contains 99% of the data's variance.
+The small vector can later be used as an input to other algorithms that benefit from the reduction. 
 
 ![PCA.png](images/PCA.png)
 
@@ -1686,17 +1672,17 @@ _ = evaluate_classifier(classifier_knn,test_pca,Y_test[:],title=evalute_alphabet
 ![png](MD/output_86_1.png)
 
 
-Note that with much smaller vector we can get almost the same results as the huge first vector
+Note that with a much smaller vector, we can get almost the same results as the huge first vector.
 
-this technique can easily decrease the complexity of the evaluations
+This technique can easily decrease the complexity of the evaluations.
 
 ### K-Means Algorithem For Unsupervised  Learning
 
 
-After we created the 'machine' that can calculate the locations of input images in the space in a way that separate them commonly by thier classes, we can use this machine to handle an new alfabets without any labels and try to separate its characters into classes
+After we created the 'machine' that can calculate the locations of input images in the space in a way that separates them commonly by their classes, we can use this machine to handle new alphabets without any labels and try to divide its characters into classes.
 
-K-Mean is a simple unsupervised algorithm that split the data into K differents clusters according their location in space
-
+K-Mean is a simple unsupervised algorithm that split the data into K different clusters according to their location in space.
+.
 
 ![KMEANS.png](images/KMEANS.png)
 
@@ -1817,11 +1803,11 @@ plt.show()
 
 # Conclusions
 
-This examination clearly showes that Neural-Networks can be used to handle missions that dont contains enough data for a traditional training
+This examination clearly shows that Neural-Networks can be used to handle missions that don't contain enough data for traditional training.
 
-I presented few ways to exploit the supervised learning model and generalizing it to handle other tasks (but still with features-similarity) doing so we can enlarge the variance of the problems that can be resolved by neurals networks 
+I presented few ways to exploit the supervised learning model and generalizing it to handle other tasks (but still with features-similarity) doing so we can enlarge the variance of the problems that can be resolved by neural networks. 
 
-we coluld improve this techniue using ensembling, I didnt demonstrated that because a lack of memory.
+We could improve this technique using ensembling. I didn't demonstrate that because of a lack of memory.
 
 
 ```python
