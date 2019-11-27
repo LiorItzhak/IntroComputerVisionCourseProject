@@ -241,7 +241,7 @@ plt.show()
 ![png](MD/output_17_11.png)
 
 
-As you see, using unsupervised clustering with no preprocessing on the data returns not very good results, also the clustering high dimensional data affecting the time and the complexity of the algorithm.
+As you see, using unsupervised clustering with no preprocessing on the data returns not very good results, also the clustering of high dimensional data is affecting the time and the complexity of the algorithm.
 
 Later on, I'll demonstrate how the 'distance technique' also helping as preprocessing for clustering tasks.
 
@@ -261,7 +261,6 @@ from random import shuffle
 
 dataset_path = r'C:\Users\liori\Desktop\Projects\Computer vision\Computer Vision Curse Final Project\OM_dataset'
 ```
-
 
 ```python
 class Alphabet():
@@ -515,7 +514,13 @@ plt.show()
 ![png](MD/output_30_0.png)
 
 
-some little augmentation functions to enlarge the diversity of the inputs - to increase the chances to generalize the training
+some little augmentation functions to enlarge the diversity of the inputs - to increase the chances of generalizing the training data
+
+I choose some aumentation that that will not har, the data:
+Flips (on the 2 inputs simultaneously)
+Rotate (small degrees)
+Move (move the contures of the picture a little)
+Aspect
 
 
 ```python
