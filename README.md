@@ -1,4 +1,4 @@
-# Combine Supervised Learning Techniques With Unsupervised Learning 
+# Combine Supervised Learning Techniques With Unsupervised Learning Methods 
 
 
 ### Class work for Introdution to Computer Vision, 
