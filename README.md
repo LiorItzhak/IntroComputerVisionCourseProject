@@ -516,7 +516,7 @@ plt.show()
 
 some little augmentation functions to enlarge the diversity of the inputs - to increase the chances of generalizing the training data
 
-I choose some augmentations that that will not har, the data:
+I choose some augmentations that that will not harm the data:
 
 Flips (on the 2 inputs simultaneously)
 
